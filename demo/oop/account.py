@@ -1,5 +1,6 @@
 class Account:
     minbal = 10000
+
     # Constructor
     def __init__(self, acno, ahname, balance=0):
         # object attributes
@@ -18,9 +19,10 @@ class Account:
 
     def withdraw(self, amount):
         if self.balance - Account.minbal >= amount:
-             self.balance -= amount
+            self.balance -= amount
         else:
-            print("Insufficient Balance!")
+            raise ValueError('Insufficient Balance!')
+
 
 # create object
 a1 = Account(1, "Mark", 10000)
@@ -29,6 +31,9 @@ a1.deposit(5000)
 a1.show()
 # Access object attribute
 print(a1.balance)
-
+try:
+    a1.withdraw(20000)
+except Exception as ex:
+    print('Error :', ex)
 
 a2 = Account(2, "Joe")

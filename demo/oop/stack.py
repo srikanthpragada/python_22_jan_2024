@@ -6,6 +6,9 @@ class Stack:
         self.data.append(value)
 
     def pop(self):
+        if self.length() == 0:   # stack is empty
+            raise ValueError('Stack is empty!')
+
         return self.data.pop()
 
     @property   # getter
