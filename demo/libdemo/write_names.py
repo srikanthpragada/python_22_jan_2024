@@ -1,9 +1,8 @@
 names = ['Larry', 'Jack', 'Scott', 'Steve', 'Mark', 'Joe']
 
-f = open("names.txt", "wt")
+with open("names.txt", "wt") as f:
+    for n in names:
+        f.write(n + "\n")
 
-for n in names:
-    f.write(n + "\n")
 
-f.close()
 
