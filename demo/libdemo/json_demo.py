@@ -1,4 +1,6 @@
 import json
+
+
 class Course:
     def __init__(self, title, fee):
         self.title = title
@@ -7,4 +9,3 @@ class Course:
 
 c = Course("Java EE", 10000)
 print(json.dumps(c.__dict__))
-
